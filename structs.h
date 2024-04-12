@@ -52,7 +52,7 @@ enum COMMAND
 };
 
 struct RequestResponseHeader {
-private:
+public:
     uint8_t _size[3];
     uint8_t _type;
     unsigned int _dejavu;
