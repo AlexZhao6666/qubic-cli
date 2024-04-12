@@ -87,6 +87,7 @@ static CurrentSystemInfo getSystemInfoFromNode(QCPtr qc)
     int ptr = 0;
     while (ptr < recvByte)
     {
+        std::cout << "循环:" << ptr;
         auto header = (RequestResponseHeader*)(data+ptr);
         if (header->type() == RESPOND_SYSTEM_INFO){
             auto curSystemInfo = (CurrentSystemInfo*)(data + ptr + sizeof(RequestResponseHeader));
