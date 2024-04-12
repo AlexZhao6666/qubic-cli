@@ -13,6 +13,7 @@
 #include "keyUtils.h"
 #include "walletUtils.h"
 #include "qubicLogParser.h"
+#include <iostream>
 
 static CurrentTickInfo getTickInfoFromNode(QCPtr qc)
 {
@@ -75,6 +76,13 @@ static CurrentSystemInfo getSystemInfoFromNode(QCPtr qc)
     std::vector<uint8_t> buffer;
     qc->receiveDataAll(buffer);
     uint8_t* data = buffer.data();
+
+    std::cout << "响应数据是:";
+    for (size_t i = 0; i < sizeof(buffer) / sizeof(buffer[0]); ++i) {
+        std::cout << +data[i] << " "; // 使用 std::hex 将每个元素以十六进制格式打印
+    }
+    std::cout << std::endl;
+
     int recvByte = buffer.size();
     int ptr = 0;
     while (ptr < recvByte)
