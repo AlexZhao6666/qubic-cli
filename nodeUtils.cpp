@@ -72,6 +72,8 @@ static CurrentSystemInfo getSystemInfoFromNode(QCPtr qc)
     packet.header.setSize(sizeof(packet));
     packet.header.randomizeDejavu();
     packet.header.setType(REQUEST_SYSTEM_INFO);
+
+
     qc->sendData((uint8_t *) &packet, packet.header.size());
     std::vector<uint8_t> buffer;
     qc->receiveDataAll(buffer);

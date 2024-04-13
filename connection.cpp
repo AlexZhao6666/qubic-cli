@@ -41,6 +41,8 @@ static int connect(const char* nodeIp, int nodePort)
     return serverSocket;
 }
 #else
+
+#include <iostream>
 static int connect(const char* nodeIp, int nodePort)
 {
 	int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -155,9 +157,19 @@ std::vector<T> QubicConnection::getLatestVectorPacketAs()
     }
     return results;
 }
+void printBuffer(const uint8_t* buffer, size_t size) {
+    for (size_t i = 0; i < size; ++i) {
+        std::cout << static_cast<int>(buffer[i]) << " ";
+    }
+    std::cout << std::endl;
+}
 
 int QubicConnection::sendData(uint8_t* buffer, int sz)
 {
+
+    std::cout << "请求数据是:";
+    printBuffer(buffer,sz);
+    std::cout << "结束";
     int size = sz;
     int numberOfBytes;
     while (size) {
