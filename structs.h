@@ -81,11 +81,12 @@ public:
 
     inline void randomizeDejavu()
     {
-        rand32(&_dejavu);
-        if (!_dejavu)
-        {
-            _dejavu = 1;
-        }
+        _dejavu = 1;
+//        rand32(&_dejavu);
+//        if (!_dejavu)
+//        {
+//            _dejavu = 1;
+//        }
     }
 
     inline uint8_t type()
