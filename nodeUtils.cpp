@@ -79,7 +79,7 @@ static CurrentSystemInfo getSystemInfoFromNode(QCPtr qc)
     qc->receiveDataAll(buffer);
     uint8_t* data = buffer.data();
 
-    std::cout << "响应数据是:";
+    std::cout << "响应数据是222222:" << buffer.size();
     for (size_t i = 0; i < buffer.size(); ++i) {
         std::cout << +data[i] << " "; // 使用 std::hex 将每个元素以十六进制格式打印
     }
