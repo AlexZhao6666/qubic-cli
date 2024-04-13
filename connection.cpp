@@ -106,6 +106,9 @@ void QubicConnection::receiveDataAll(std::vector<uint8_t>& receivedData)
         recvByte = receiveData(tmp, 1024);
         std::cout << "22222222:" << recvByte << ":";
         std::cout << std::endl;
+
+        std::cout << "3333333:" << receivedData.size() << ":";
+        std::cout << std::endl;
     }
 }
 
