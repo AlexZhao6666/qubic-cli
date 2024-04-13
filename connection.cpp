@@ -89,7 +89,7 @@ void QubicConnection::receiveDataAll(std::vector<uint8_t>& receivedData)
     receivedData.resize(0);
     uint8_t tmp[1024];
     int recvByte = receiveData(tmp, 1024);
-    std::cout << "111111111" << recvByte << ":";
+    std::cout << "111111111:" << recvByte << ":";
     std::cout << std::endl;
 
     std::cout << "响应数据是:";
@@ -104,7 +104,8 @@ void QubicConnection::receiveDataAll(std::vector<uint8_t>& receivedData)
         receivedData.resize(recvByte + receivedData.size());
         memcpy(receivedData.data() + receivedData.size() - recvByte, tmp, recvByte);
         recvByte = receiveData(tmp, 1024);
-
+        std::cout << "22222222:" << recvByte << ":";
+        std::cout << std::endl;
     }
 }
 
