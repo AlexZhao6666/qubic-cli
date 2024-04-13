@@ -89,7 +89,7 @@ void QubicConnection::receiveDataAll(std::vector<uint8_t>& receivedData)
     receivedData.resize(0);
     uint8_t tmp[1024];
     int recvByte = receiveData(tmp, 1024);
-    std::cout << "11111响应数据是:";
+    std::cout << "11111响应数据是" << recvByte << ":";
     for (size_t i = 0; i < recvByte; ++i) {
         std::cout << +tmp[i] << " "; // 使用 std::hex 将每个元素以十六进制格式打印
     }
